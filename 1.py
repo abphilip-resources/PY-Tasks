@@ -1,14 +1,23 @@
-def get_prime_factors(N):
-    factors = list()
-    divisor = 2
-    while(divisor <= N):
-        if (N % divisor) == 0:
-            factors.append(divisor)
-            N = N/divisor
-        else: divisor += 1
-    return factors
+import time
+import random
+
+def waiting_game():
+    target = random.randint(2,4) 
+    print('\nYour target time is {} seconds'.format(target))
+    
+    input(' ---Press Enter to Begin--- ')
+    start = time.perf_counter()
+    
+    input('\n...Press Enter again after {} seconds...'.format(target))
+    elapsed = time.perf_counter() - start
+    
+    print('\nElapsed time: {0:.3f} seconds'.format(elapsed))
+    if elapsed == target:
+        print('(Unbelievable! Perfect timing!)')
+    elif elapsed < target:
+        print('({0:.3f} seconds too fast)'.format(target - elapsed))
+    else:
+        print('({0:.3f} seconds too slow)'.format(elapsed - target))
     
 if __name__ == '__main__':
-    print(get_prime_factors(630))
-    print(get_prime_factors(13))
-    print(get_prime_factors(24))
+    waiting_game()
