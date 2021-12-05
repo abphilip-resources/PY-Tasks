@@ -25,10 +25,10 @@ def print_sudoku(puzzle):
     print()
     for row in range(0,9):
         if ((row % 3 == 0) and (row != 0)):
-            print('-'*33) # draw horizontal line
+            print('-'*33) 
         for col in range(0,9):
             if ((col % 3 == 0) and (col != 0)):
-                print(' | ', end='') # draw vertical line
+                print(' | ', end='') 
             print('', puzzle[row][col], '', end='')
         print()
     print()
