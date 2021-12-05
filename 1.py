@@ -11,3 +11,4 @@ def get_prime_factors(N):
 if __name__ == '__main__':
     print(get_prime_factors(630))
     print(get_prime_factors(13))
+    print(get_prime_factors(24))
