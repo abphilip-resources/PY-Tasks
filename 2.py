@@ -2,12 +2,11 @@ import sched
 import time
 import winsound as ws
 
-def set_alarm(alarm_time, wav_file, message):
+def alarm(t, a, m):
     s = sched.scheduler(time.time, time.sleep)
-    s.enterabs(alarm_time, 1, print, argument=(message,))
-    s.enterabs(alarm_time, 1, ws.PlaySound, argument=(wav_file, ws.SND_FILENAME))
-    print('Alarm set for', time.asctime(time.localtime(alarm_time)))
+    s.enterabs(t, 1, print, argument=(m,))
+    s.enterabs(t, 1, ws.PlaySound, argument=(a, ws.SND_FILENAME))
+    print('Alarm set for', time.asctime(time.localtime(t)))
     s.run()
 
-if __name__ == '__main__':    
-    set_alarm(time.time()+1, 'alarm.wav', 'Wake up!')
+alarm(time.time()+5, 'data/alarm.wav', 'Wake up!')
