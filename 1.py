@@ -2,22 +2,17 @@ import time
 import random
 
 def waiting_game():
-    target = random.randint(2,4) 
-    print('\nYour target time is {} seconds'.format(target))
+    t = random.randint(2,4) 
+    print(f'\nYour target time is {t} seconds\n')
     
-    input(' ---Press Enter to Begin--- ')
-    start = time.perf_counter()
+    input('-------------- Press Enter to Begin --------------')
+    s = time.perf_counter()
+    input(f'--------- Press Enter again after {t} secs ---------')
+    e = time.perf_counter() - s
     
-    input('\n...Press Enter again after {} seconds...'.format(target))
-    elapsed = time.perf_counter() - start
+    print('\nElapsed time: {0:.3f} seconds'.format(e))
+    if t-0.3 < e < t+0.3: print('(Unbelievable! Perfect timing!)')
+    elif e <= t-0.3: print('({0:.3f} seconds too fast)'.format(t - e))
+    elif e >= t+0.3: print('({0:.3f} seconds too slow)'.format(e - t))
     
-    print('\nElapsed time: {0:.3f} seconds'.format(elapsed))
-    if elapsed == target:
-        print('(Unbelievable! Perfect timing!)')
-    elif elapsed < target:
-        print('({0:.3f} seconds too fast)'.format(target - elapsed))
-    else:
-        print('({0:.3f} seconds too slow)'.format(elapsed - target))
-    
-if __name__ == '__main__':
-    waiting_game()
+waiting_game()
