@@ -3,17 +3,15 @@ from itertools import product
 def solve(s):
     for (row, col) in product(range(0,9), repeat=2):
         if s[row][col] == 0:
-            for num in range(1,10):
+            for z in range(1,10):
                 k = True 
                 for i in range(0,9):
-                    if (s[i][col] == num) or (s[row][i] == num): 
-                        k = False; break
+                    if (s[i][col] == z) or (s[row][i] == z): k = False; break
                 for (i, j) in product(range(0,3), repeat=2):
-                    if s[row-row%3+i][col-col%3+j] == num: 
-                        k = False; break
+                    if s[row-row%3+i][col-col%3+j] == z: k = False; break
                 if k:       
-                    s[row][col] = num
-                    if trial := solve(s): return trial
+                    s[row][col] = z
+                    if x := solve(s): return x
                     else: s[row][col] = 0
             return False 
     return s
