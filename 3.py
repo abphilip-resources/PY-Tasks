@@ -12,6 +12,6 @@ def email(r, subject, body):
     with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
         server.login(s, p)
         server.sendmail(s, r, message)
-    server.quit()
+    server.quit() 
 
 email('allenbphilip@gmail.com', 'Python', 'Everything is awesome!')
