@@ -13,6 +13,6 @@ def waiting_game():
     print('\nElapsed time: {0:.3f} seconds'.format(e))
     if t-0.3 < e < t+0.3: print('(Unbelievable! Perfect timing!)')
     elif e <= t-0.3: print('({0:.3f} seconds too fast)'.format(t - e))
-    elif e >= t+0.3: print('({0:.3f} seconds too slow)'.format(e - t))
+    elif e >= t+0.3: print('({0:.3f} seconds too slow)'.format(e - t)) 
     
 waiting_game()
