@@ -8,7 +8,7 @@ def solve(s):
                 for i in range(0,9):
                     if (s[i][col] == z) or (s[row][i] == z): k = False; break
                 for (i, j) in product(range(0,3), repeat=2):
-                    if s[row-row%3+i][col-col%3+j] == z: k = False; break
+                    if (s[row-row%3+i][col-col%3+j] == z): k = False; break
                 if k:       
                     s[row][col] = z
                     if x := solve(s): return x
