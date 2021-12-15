@@ -22,8 +22,7 @@ def display(s):
     for row in range(0,9):
         if ((row % 3 == 0) and (row != 0)): print('-'*33) 
         for col in range(0,9):
-            if ((col % 3 == 0) and (col != 0)):
-                print(' | ', end='') 
+            if ((col % 3 == 0) and (col != 0)): print(' | ', end='') 
             print('', s[row][col], '', end='')
         print()
     print()
