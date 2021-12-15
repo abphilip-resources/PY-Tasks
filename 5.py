@@ -93,5 +93,5 @@ def rm(img, n):
 
 if len(sys.argv) != 4:
     print(f'USAGE: {__file__} <input> <num-seams-to-remove> <output>')
-    sys.exit(1)
+    sys.exit(1) 
 write(rm(read(sys.argv[1]), int(sys.argv[2])), sys.argv[3])
